@@ -26,3 +26,10 @@
 
 ## Analysis
 
+Out of the requests made, the HTML document was the slowest one by a huge difference compared to the others. It took 657 ms to load. This happened because the browser might had to go to the internet and download it directly from the server, getting a normal "200 OK" status code.
+
+On the other hand, the other two files were much faster. The CSS file took 15 ms and the JavaScript file took only 3 ms. Both of their status codes were "200 OK (from disk cache)". This means my computer already had them saved in memory, so it didn't have to download them again from the internet.
+
+The response headers give the browser specific instructions such as "Content-Length" header, which tells the browser that the file is exactly 3797 bytes. This helps the browser know how big the file is and when the download is finished.
+
+One thing that really surprised me was the "Server" header on the JavaScript file. It said "Windows-Azure-Web/1.0". Since I was testing a GitHub page, I thought GitHub used only its own private servers for everything. It was interesting to see that they actually use Microsoft Azure to help deliver some of their files behind the scenes.
