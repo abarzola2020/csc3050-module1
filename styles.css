@@ -1,0 +1,36 @@
+:root{
+	--color-bg: #fbf7f2;
+  --color-text: #2b2118;
+  --color-accent: #b4441c;
+  --step-0: 1rem;   --step-1: 1.25rem;  --step-2: 1.6rem;  
+  --space: 1rem;
+}
+ .site-header { display: flex;flex-direction: column; gap: 0.25rem;}
+ 
+ .cards {                                           /* a collection in rows and columns: Grid */
+  display: grid;
+  grid-template-columns: 1fr;                      /* phone first */
+  gap: var(--space);
+}
+
+@media (min-width: 768px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Desktop and up */
+@media (min-width: 1200px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+  main { max-width: 1200px; margin: 0 auto; }
+}
+
+.site-header {
+  border-bottom: 2px solid #e0dcd5; 
+  padding-bottom: var(--space);
+  margin-bottom: calc(var(--space) * 2);
+}
+.site-header nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space);
+  margin: 0;
+}
