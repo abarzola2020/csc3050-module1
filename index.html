@@ -2,37 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Pitch</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="site-header">
-        <h1>Assignment Tracker </h1>
+        <h1>Assignment Tracker</h1>
         <nav>
             <ul>
-                <li><a href="#about">Add an assigmnet</a></li>
-                <li><a href="#features">See all Assigments </a></li>
+                <li><a href="#about" id="add-nav-link">Add an Assignment</a></li>
+                <li><a href="#features">View Assignments</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
         <section id="about">
-            <h2>Work and upcoming Assignments</h2>
-            <p> </p>
+            <h2>Type assignment name and date</h2>
+            <input type="text" id="Assignment-input" placeholder="Type Assignment here">
+            <input type="date" id="Date-input">
         </section>
-
         <section id="features">
-            <h2>List of Assignments </h2>
-            <ul class="cards">
-                <li>Temp for list of assigmnets</li>
-            </ul>
+            <h2>List of Assignments</h2>
+            <ul class="cards" id="assignment-list"></ul>
         </section>
     </main>
+    <footer></footer>
 
-    <footer>
-      
-    </footer>
+    <script src="app.js"></script>
 </body>
 </html>
