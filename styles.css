@@ -31,6 +31,18 @@ body {
   gap: var(--space);
 }
 
+.assignment-card button {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.assignment-card:hover button,
+.assignment-card:focus-within button {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media (min-width: 768px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
 }

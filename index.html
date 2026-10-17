@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="app.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Pitch</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- The defer attribute tells the browser to wait until the HTML has been parsed before executing JavaScript. -->
+    <script src="app.js" defer></script>
 </head>
 <body>
     <header class="site-header">
         <h1>Assignment Tracker</h1>
         <nav>
             <ul>
-                <li><a href="#about" id="add-nav-link">Add an Assignment</a></li>
-                <li><a href="#features">Remove an Assigmnet</a></li>
+                <li><a href="#add" id="add-nav-link">Add an Assignment</a></li>
+                <li><a href="#list" id="list-nav-link">View Assignments</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="about">
+        <section id="add">
             <h2>Type assignment name and date</h2>
-            <input type="text" id="Assignment-input" placeholder="Type Assignment here">
-            <input type="date" id="Date-input">
+
+            <label for="Assignment-input">Assignment name</label>
+            <input type="text" id="Assignment-input" placeholder="Type Assignment here" required>
+
+            <label for="Date-input">Due Date</label>
+            <input type="date" id="Date-input" required>
+
+            <button type="button" id="add-assignment-btn">
+                Add Assignment
+            </button>
+
+            <!-- Status message -->
+            <p id="form-message" role="status" aria-live="polite"></p>
         </section>
-        <section id="features">
+        <section id="list">
             <h2>List of Assignments</h2>
             <ul class="cards" id="assignment-list"></ul>
         </section>
