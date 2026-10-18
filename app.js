@@ -3,6 +3,7 @@ const dateInput = document.querySelector("#Date-input");
 const addButton = document.querySelector("#add-assignment-btn");
 const assignmentList = document.querySelector("#assignment-list");
 const formMessage = document.querySelector("#form-message");
+const searchInput = document.querySelector("#search-input");
 
 
 
@@ -27,6 +28,7 @@ addButton.addEventListener("click", () => {
     listItem.classList.add("assignment-card");
 
     // Create the assignment text
+        //span is an inline element, a wrapper for text, used to style a part of the text
     const assignmentText = document.createElement("span");
     assignmentText.textContent = `${assignmentName} - Due: ${dueDate}`;
 
@@ -45,7 +47,7 @@ addButton.addEventListener("click", () => {
     listItem.appendChild(assignmentText);
     listItem.appendChild(removeButton);
 
-    // Put the card inside the assignment list
+    // Put the card with everything part of the card inside the assignment list
     assignmentList.appendChild(listItem);
     formMessage.textContent = "Assignment added successfully!";
 
@@ -53,3 +55,20 @@ addButton.addEventListener("click", () => {
     assignmentInput.value = "";
     dateInput.value = "";
 });
+
+//search box
+searchInput.addEventListener("input", () => {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+        //makes assignment var = to all .assignment-card elements in the assignmentList which is every assignemnt
+    const assignments = assignmentList.querySelectorAll(".assignment-card");
+
+        
+    assignments.forEach((assignment) => {
+        //further simplifies assignments to all span elements and their .textContent, which is the assignment name and due date
+        const assignmentText = assignment.querySelector("span").textContent.toLowerCase();
+        const matches = assignmentText.includes(searchTerm);
+
+        assignment.hidden = !matches;
+    });
+});
+
