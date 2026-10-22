@@ -1,12 +1,4 @@
-
-<<<<<<< HEAD
-This application will have a user input a assigmnet name and date then click the add assigmnet button
-Along side adding assigments to the list there is an option to remove a an assigmnet a user must hover over the assigmnet and click remove
-=======
-
-
-
-
+# csc3050-module1
 What the application does:
   Currently the application is designed to add or remove assignments. Users are able to add their assignment name and the due date onto
   the appropriate fields when pressed enter, the application will make a card for the assignment and add it to the unordered list.
@@ -16,4 +8,3 @@ What the application does:
   There is also an unordered list for the tabs in the header for further navigation implementations...
 
   There is a search box thatll make assignments that dont fit the query disapear, and a status box to let users know the status when pressing add assignment or remove.
->>>>>>> 9aae921fbfce3a4ba9f5ae5c2b0bd0cca0bcb737
