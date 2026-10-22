@@ -1,0 +1,4 @@
+API Contract
+This assigmnet tracter is a static single page website that currently doesnt interact with exteral html
+the current html does communicate with a app.js file to be able to utilize the html buttons and add
+assigmnets to the list.
