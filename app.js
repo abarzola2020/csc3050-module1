@@ -29,8 +29,10 @@ addButton.addEventListener("click", () => {
 
     // Create the assignment text
         //span is an inline element, a wrapper for text, used to style a part of the text
-    const assignmentText = document.createElement("span");
-    assignmentText.textContent = `${assignmentName} - Due: ${dueDate}`;
+    
+    const assignmentText = document.createElement("article");
+    assignmentText.innerHTML = `<h3>${assignmentName}</h3><p>Due: <time datetime="${dueDate}">${dueDate}</time></p>`;
+    
 
     // Create the Remove button
     const removeButton = document.createElement("button");
@@ -65,10 +67,21 @@ searchInput.addEventListener("input", () => {
         
     assignments.forEach((assignment) => {
         //further simplifies assignments to all span elements and their .textContent, which is the assignment name and due date
-        const assignmentText = assignment.querySelector("span").textContent.toLowerCase();
+        const assignmentText = assignment.querySelector("article").textContent.toLowerCase();
+
+        
         const matches = assignmentText.includes(searchTerm);
 
         assignment.hidden = !matches;
     });
+});
+
+
+// Make "Remove" buttons work for the 3 default HTML cards
+assignmentList.addEventListener("click", (event) => {
+    if (event.target.classList.contains("remove-btn") || event.target.textContent === "Remove") {
+        event.target.closest("li").remove();
+        formMessage.textContent = "Assignment removed.";
+    }
 });
 
