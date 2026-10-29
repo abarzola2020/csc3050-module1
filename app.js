@@ -1,0 +1,87 @@
+const assignmentInput = document.querySelector("#Assignment-input");
+const dateInput = document.querySelector("#Date-input");
+const addButton = document.querySelector("#add-assignment-btn");
+const assignmentList = document.querySelector("#assignment-list");
+const formMessage = document.querySelector("#form-message");
+const searchInput = document.querySelector("#search-input");
+
+
+
+
+// listens for a click event then does rest of code
+addButton.addEventListener("click", () => {
+    const assignmentName = assignmentInput.value.trim();
+        //.value gets whats in input
+        //.trim() removes whitespace from both ends of the string
+    const dueDate = dateInput.value;
+
+    //edge case: if either input is empty, display message and return
+    if (assignmentName === "" || dueDate === "") { 
+        //makes content of formMessage element equal to the string
+        formMessage.textContent = "Please enter an assignment name and due date.";
+        return;
+    }
+
+    // li (list item) html element, child of ul
+    const listItem = document.createElement("li");
+    // Add a class to the list item for styling 
+    listItem.classList.add("assignment-card");
+
+    // Create the assignment text
+        //span is an inline element, a wrapper for text, used to style a part of the text
+    
+    const assignmentText = document.createElement("article");
+    assignmentText.innerHTML = `<h3>${assignmentName}</h3><p>Due: <time datetime="${dueDate}">${dueDate}</time></p>`;
+    
+
+    // Create the Remove button
+    const removeButton = document.createElement("button");
+    removeButton.type = "button";
+    removeButton.textContent = "Remove";
+
+    // Remove this assignment when clicked
+    removeButton.addEventListener("click", () => {
+        listItem.remove();
+        formMessage.textContent = `${assignmentName} removed.`;
+    });
+
+    // Put the text and button inside the card
+    listItem.appendChild(assignmentText);
+    listItem.appendChild(removeButton);
+
+    // Put the card with everything part of the card inside the assignment list
+    assignmentList.appendChild(listItem);
+    formMessage.textContent = "Assignment added successfully!";
+
+    //reset input after adding assignment
+    assignmentInput.value = "";
+    dateInput.value = "";
+});
+
+//search box
+searchInput.addEventListener("input", () => {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+        //makes assignment var = to all .assignment-card elements in the assignmentList which is every assignemnt
+    const assignments = assignmentList.querySelectorAll(".assignment-card");
+
+        
+    assignments.forEach((assignment) => {
+        //further simplifies assignments to all span elements and their .textContent, which is the assignment name and due date
+        const assignmentText = assignment.querySelector("article").textContent.toLowerCase();
+
+        
+        const matches = assignmentText.includes(searchTerm);
+
+        assignment.hidden = !matches;
+    });
+});
+
+
+// Make "Remove" buttons work for the 3 default HTML cards
+assignmentList.addEventListener("click", (event) => {
+    if (event.target.classList.contains("remove-btn") || event.target.textContent === "Remove") {
+        event.target.closest("li").remove();
+        formMessage.textContent = "Assignment removed.";
+    }
+});
+

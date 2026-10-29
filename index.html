@@ -1,37 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Pitch</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- The defer attribute tells the browser to wait until the HTML has been parsed before executing JavaScript. -->
+    <script src="app.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Capstone Project Pitch</h1>
+    <header class="site-header">
+        <h1>Assignment Tracker</h1>
+
         <nav>
             <ul>
-                <li><a href="#about">About the App</a></li>
-                <li><a href="#features">Features</a></li>
+                <li><a href="#add" id="add-nav-link">Add an Assignment</a></li>
             </ul>
         </nav>
+
+        <label for="search-input">Search assignments</label>
+        <!-- Search box -->
+        <input type="search" id="search-input" placeholder="Search by assignment name...">
+        
     </header>
-
     <main>
-        <section id="about">
-            <h2>Student Task Tracker</h2>
-            <p>For my capstone project, I want to build a simple web application to help college students track their homework and upcoming exams.</p>
-        </section>
+        <section id="add">
+            <h2>Type assignment name and date</h2>
 
-        <section id="features">
-            <h2>Basic Features</h2>
-            <ul>
-                <li>Add and remove tasks</li>
-                <li>Set deadlines for assignments</li>
-            </ul>
+            <label for="Assignment-input">Assignment name</label>
+            <input type="text" id="Assignment-input" placeholder="Type Assignment here" required>
+
+            <label for="Date-input">Due Date</label>
+            <input type="date" id="Date-input" required>
+
+            <button type="button" id="add-assignment-btn">
+                Add Assignment
+            </button>
+
+            <!-- Status message -->
+            <p id="form-message" role="status" aria-live="polite"></p>
+        </section>
+        <section id="list">
+            <h2>List of Assignments</h2>
+
+
+            <ul class="cards" id="assignment-list">
+    <li class="assignment-card">
+        <article>
+            <h3>Milestone 1</h3>
+            <p>Due: <time datetime="2026-10-25">2026-10-25</time></p>
+            <button type="button" class="remove-btn">Remove</button>
+        </article>
+    </li>
+    <li class="assignment-card">
+        <article>
+            <h3>Lab Exercise</h3>
+            <p>Due: <time datetime="2026-10-28">2026-10-28</time></p>
+            <button type="button" class="remove-btn">Remove</button>
+        </article>
+    </li>
+    <li class="assignment-card">
+        <article>
+            <h3>Reading Quiz</h3>
+            <p>Due: <time datetime="2026-10-30">2026-10-30</time></p>
+            <button type="button" class="remove-btn">Remove</button>
+        </article>
+    </li>
+</ul>
+
+            
         </section>
     </main>
+    <footer></footer>
 
-    <footer>
-        <p>CSC3050 - Module 1 Warm-up</p>
-    </footer>
+   
 </body>
 </html>
