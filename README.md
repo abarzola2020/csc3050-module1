@@ -9,7 +9,7 @@ Initializing the npm:
   open cmd or open folder with Some IDE.
   go to server folder I.e [cd csc3050-module1\server]
   run npm install (default options if there are selectable options) **have to run for both files sepreately**
-  then run **npm start dev**
+  then run **npm start dev** x
   
 
 
