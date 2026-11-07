@@ -1,35 +1,33 @@
 import express from "express";
+import assignmentRoutes from "./routes/assignments.js";
 
 const app = express();
-app.use(express.json());   // reads JSON request bodies; we need it from Lab 3B on
+const PORT = 3000;
 
-// In memory: no database. Change the names and fields to your own resource later.
-const items = [
-  { id: 1, name: "Item One", category: "A" },
-  { id: 2, name: "Item Two", category: "B" },
-  { id: 3, name: "Item Three", category: "A" },
-  { id: 4, name: "Item Four", category: "B" },
-];
+app.use(express.json());
 
-app.get("/api/items", (req, res) => {
-  res.status(200).json(items);
+app.use("/api/assignments", assignmentRoutes);
+
+app.use((req, res) => {
+  res.status(404).json({
+    error: "Route not found"
+  });
 });
 
-app.get("/api/items/:id", (req, res) => {
-  const item = items.find(i => i.id === Number(req.params.id));
-
-  if (!item) {
-    return res.status(404).json({
-      error: {
-        code: "NOT_FOUND",
-        message: `No item with id ${req.params.id}`,
-      },
+app.use((err, req, res, next) => {
+  if (err.type === "entity.parse.failed") {
+    return res.status(400).json({
+      error: "Invalid JSON in request body"
     });
   }
 
-  res.status(200).json(item);
+  console.error(err);
+
+  res.status(500).json({
+    error: "Internal server error"
+  });
 });
 
-app.listen(3001, () => {
-  console.log("API running at http://localhost:3001");
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });

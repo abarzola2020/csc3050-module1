@@ -2,14 +2,21 @@ Initializing the npm:
   (Client)
   open cmd or open folder with Some IDE.
   go to client folder I.e [cd csc3050-module1\client]
-  run npm install (default options if there are selectable options) **have to run for both files sepreately**
+  **run npm install** (default options if there are selectable options) **have to run for both files sepreately**
   then run ***npm run dev**
 
   (Server)
   open cmd or open folder with Some IDE.
   go to server folder I.e [cd csc3050-module1\server]
-  run npm install (default options if there are selectable options) **have to run for both files sepreately**
-  then run **npm start dev**
+  **run npm install express** (default options if there are selectable options) **have to run for both files sepreately**
+  then run **npm run dev**
+
+
+  Yes you will have to do this **EVERY TIME** you pull the file...
+
+What is npm?
+  Node Package maneger
+  It's a tool that comes with Node.js and helps you manage JavaScript packages.
   
 
 
