@@ -24,6 +24,27 @@
   * Content-Length: Tells the browser the exact size of the file being transferred in bytes, which in this case is 3797.
   * Server`: Identifies the underlying software or operating system running on the server that answered the request (Windows-Azure-Web/1.0).
 
+
+    **coppied from recipies 2, subject to change**
+## The resource: Assignment
+
+| Field | Type | Rules |
+|---|---|---|
+| `id` | integer | assigned by the server |
+| `name` | string | required, not blank |
+| `Date` | string | ? |
+
+## Endpoints
+  **FROM SERVER**
+| Method and path | Request body | Success | Errors |
+|---|---|---|---|
+| `GET /api/recipes` | none | `200` and an array of recipes | none | **Get assignment**
+| `GET /api/recipes/:id` | none | `200` and the recipe | `404 NOT_FOUND` | **search function get**
+| `POST /api/recipes` | `{ name, category, minutes }` | `201` and the created recipe, with its `id` | `400 VALIDATION_FAILED`, `400 BAD_JSON` | **add assignment once click button**
+| `DELETE /api/recipes/:id` | none | `204` and no body | `404 NOT_FOUND` | **delete button**
+
+| `PUT /api/recipes/:id` | `{ name, category, minutes }` | `200` and the updated recipe | `400 VALIDATION_FAILED`, `400 BAD_JSON`, `404 NOT_FOUND` |
+
 ## Analysis
 
 For Part 4, we checked the Network panel in my browser when loading the "Assignment Tracker". 
