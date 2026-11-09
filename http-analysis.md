@@ -32,18 +32,18 @@
 |---|---|---|
 | `id` | integer | assigned by the server |
 | `name` | string | required, not blank |
-| `Date` | string | ? |
+| `DueDate` | string | required, YYYY,MM,DD
 
 ## Endpoints
   **FROM SERVER**
 | Method and path | Request body | Success | Errors |
 |---|---|---|---|
-| `GET /api/recipes` | none | `200` and an array of recipes | none | **Get assignment**
-| `GET /api/recipes/:id` | none | `200` and the recipe | `404 NOT_FOUND` | **search function get**
-| `POST /api/recipes` | `{ name, category, minutes }` | `201` and the created recipe, with its `id` | `400 VALIDATION_FAILED`, `400 BAD_JSON` | **add assignment once click button**
-| `DELETE /api/recipes/:id` | none | `204` and no body | `404 NOT_FOUND` | **delete button**
+| `GET /api/assigmnets` | none | `200` and an array of assigmnets | none | **Get assignment**
+| `GET /api/assigmnets/:id` | none | `200` and the recipe | `404 NOT_FOUND` | **search function get**
+| `POST /api/assigmnets` | `{ name, category, minutes }` | `201` and the created recipe, with its `id` | `400 VALIDATION_FAILED`, `400 BAD_JSON` | **add assignment once click button**
+| `DELETE /api/assigmnets/:id` | none | `204` and no body | `404 NOT_FOUND` | **delete button**
 
-| `PUT /api/recipes/:id` | `{ name, category, minutes }` | `200` and the updated recipe | `400 VALIDATION_FAILED`, `400 BAD_JSON`, `404 NOT_FOUND` |
+| `PUT /api/assigmnets/:id` | `{ name, category, minutes }` | `200` and the updated recipe | `400 VALIDATION_FAILED`, `400 BAD_JSON`, `404 NOT_FOUND` |
 
 ## Analysis
 
