@@ -2,7 +2,8 @@ Initializing the npm:
   (Client)
   open cmd or open folder with Some IDE.
   go to client folder I.e [cd csc3050-module1\client]
-  **run npm install** (default options if there are selectable options) **have to run for both files sepreately**
+  run **npm install** (default options if there are selectable options) **have to run for both files sepreately**
+  then run **npm ls react-router-dom**
   then run ***npm run dev**
 
   (Server)
@@ -13,6 +14,10 @@ Initializing the npm:
 
 
   Yes you will have to do this **EVERY TIME** you pull the file...
+
+vitest
+  cd server
+  npm install -D vitest supertest
 
 What is npm?
   Node Package maneger

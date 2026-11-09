@@ -39,27 +39,8 @@
 | Method and path | Request body | Success | Errors |
 |---|---|---|---|
 | `GET /api/assigmnets` | none | `200` and an array of assigmnets | none | **Get assignment**
-| `GET /api/assigmnets/:id` | none | `200` and the recipe | `404 NOT_FOUND` | **search function get**
-| `POST /api/assigmnets` | `{ name, category, minutes }` | `201` and the created recipe, with its `id` | `400 VALIDATION_FAILED`, `400 BAD_JSON` | **add assignment once click button**
+| `GET /api/assigmnets/:id` | none | 200 OK, returns the requested assignment | `404 NOT_FOUND` | **search function get**
+| `POST /api/assigmnets` | `{ "name": "Homework", "dueDate": "2026-11-15" }` | 201 Created, returns the new assignment with its generated id | `400 VALIDATION_FAILED`, `400 BAD_JSON` |
+| `PUT /api/assigmnets/:id` | `{ "name": "Updated Homework", "dueDate": "2026-11-16" }` | 200 OK, returns the updated assignment | 400 Bad Request for invalid data or malformed JSON; 404 Not Found if the assignment does not exist
+ |
 | `DELETE /api/assigmnets/:id` | none | `204` and no body | `404 NOT_FOUND` | **delete button**
-
-| `PUT /api/assigmnets/:id` | `{ name, category, minutes }` | `200` and the updated recipe | `400 VALIDATION_FAILED`, `400 BAD_JSON`, `404 NOT_FOUND` |
-
-## Analysis
-
-For Part 4, we checked the Network panel in my browser when loading the "Assignment Tracker". 
-
-The moment the page opens, React uses useEffect to send a fetch request to our -> /api/assignments URL.
-
-In the Request Headers, we saw that the method is GET, which means we are asking for data. The accept header is */*, meaning the browser can take any kind of format. 
-
-The Host shows as localhost:5173, but our vite proxy correctly sends this to our Express server on port 3000.
-
-The Response Status code was 200 OK, which means the server got our message and sent the right data back without any errors. Also, the Response Headers included Content-Type: 
-
-application/json, which proves the data is in JSON format.
-
-Then, we looked at the Payload. The server returned a JSON array filled with our assignment objects, such as
-[{"id": 1, "name": "Milestone 1"}, {"id": 2, "name": "Lab Exercise"}].
-
-Finally, getting this data caused a state change in our React app. The setAssignments function saved the new data into our state. Additionally, setStatus("success") told the app to hide the "Loading.." text and show the actual list of assignments on the screen.
