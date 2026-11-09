@@ -11,6 +11,12 @@
   There is a search box thatll make assignments that dont fit the query disapear, and a status box to let users know the status when pressing add assignment or remove.
 
 
+
+##  known bugs, shortcuts, and unfinished pieces.
+  no known bugs
+  http://localhost:3000/api/assignments for assignments serverside
+  css and visual effects definately need some work but core functionallity is done. GL :3
+
 ## Initializing the npm:
   (Client)
   open cmd or open folder with Some IDE.
