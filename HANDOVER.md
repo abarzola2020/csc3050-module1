@@ -27,11 +27,17 @@ Mainly for students, Main resource is Assignments and it's details of what the u
   Yes you will have to do this **EVERY TIME** you pull the file on a new device...
 
 ## 3. Current state
-Everything is complete and functionable. 
-More things could be added like description box which would make it more useful. 
-Remove button is currently not mobile friendly but that's an easy fix with needing to hover over it to show it. 
-We didn't touch the CSS since module 1 so that needs some attention. 
-Further implementation is quite simple since everything is organized.
+- Everything is complete and functionable. 
+- More things could be added like description box which would make it more useful. 
+- Remove button is currently not mobile friendly but that's an easy fix with needing to hover over it to show it. 
+- We didn't touch the CSS since module 1 so that needs some attention. 
+- Further implementation is quite simple since everything is organized.
+
+- The application allows users to add, view, edit, and delete assignments.
+- Users can search for assignments by name.
+- The server uses Express and the client uses React.
+- The application has API routes for managing assignments.
+- Some API tests have been created using Vitest and Supertest.
 
 
 ## 4. Important decisions
@@ -39,8 +45,16 @@ Everything in assignment details like the edit button is in Assignment detail co
 
 Assignment Controller controls the operations serveride for just the assignment portions which allows more functionality to the app serverside if further implemented.
 
+- In-memory storage: Assignments are stored in an array, so they disappear when the server restarts.
+- React and Express: React is used for the frontend and Express for the backend.
+- Separate folders: The client and server have their own folders to keep the project organized.
+- Unique IDs: Each assignment has its own ID.
+
 ## 5. Known problems and unfinished work
-Remove button is not mobile friendly since user needs to hover over the assignment card for it to show, but no other known bugs. Everything is functionable.
+- Remove button is not mobile friendly since user needs to hover over the assignment card for it to show, but no other known bugs.
+- Assignment data is not saved permanently.
+- css could be improved, especially for mobile devices.
+- Search only works by assignment name.
 
 ## 6. Handover checks (receiving pod)
 Version received: commit ______
@@ -50,10 +64,18 @@ The four checks: did each pass as received? After the handoff fixes?
 Where the data is kept now (in memory or a JSON file), the API contract
 file, and the main front-end components and back-end route files.
 
-Currently assignments are stored in an array in assignment controller. accecced via  http://localhost:3000/api/assignments 
+- Data is stored in an array inside assignmentController.js. accecced via  http://localhost:3000/api/assignments 
+- The API contract is in API-CONTRACT.md
+- The backend routes are in server/routes/assignments.js.
+- The main frontend components are in client/src/components/, and the main application is in client/src/App.jsx.
 
 ## 8. Suggested first steps for Milestone 3 (authors)
 Add description box. Also make remove button mobile friendly and make it possible for mulitple users to use the app... CSS needs some love too.
+- Add more tests. 
+- Improve the css and mobile behavior.
+- Add permanent storage for assignments so assignments survive restarts.
+
+GL :3
 
 ## 9. Takeover Notes (receiving pod): one sentence for each
 - Do we understand what the app does and how the code is organized?

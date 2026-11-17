@@ -36,34 +36,3 @@
 ## What is npm?
   Node Package maneger
   It's a tool that comes with Node.js and helps you manage JavaScript packages.
-
-## Current state
-
-- The application allows users to add, view, edit, and delete assignments.
-- Users can search for assignments by name.
-- The server uses Express and the client uses React.
-- The application has API routes for managing assignments.
-- Some API tests have been created using Vitest and Supertest.
-
-## Important decisions
-
-- In-memory storage: Assignments are stored in an array, so they disappear when the server restarts.
-- React and Express: React is used for the frontend and Express for the backend.
-- Separate folders: The client and server have their own folders to keep the project organized.
-- Unique IDs: Each assignment has its own ID.
-
-## Where things live
-- Data is stored in an array inside assignmentController.js. The API contract is in API-CONTRACT.md
-- The backend routes are in server/routes/assignments.js.
-- The main frontend components are in client/src/components/, and the main application is in client/src/App.jsx.
-
-## Known problems and unfinished work
-
-- Assignment data is not saved permanently.
-- css could be improved, especially for mobile devices.
-- Search only works by assignment name.
-
-## Suggested first steps
-- Add more tests. 
-- Improve the css and mobile behavior.
-- Add permanent storage for assignments so assignments survive restarts.
