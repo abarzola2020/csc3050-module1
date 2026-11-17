@@ -27,8 +27,6 @@
 
   Yes you will have to do this **EVERY TIME** you pull the file on a new device...
 
-## Initializing the npm (Set up):
-
 ## vitest
   cd server
   npm install -D vitest supertest
