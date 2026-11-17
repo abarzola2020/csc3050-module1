@@ -16,6 +16,8 @@ function isValidAssignment(name, dueDate) {
   }
 
   // Check YYYY-MM-DD format and actual calendar date
+  // this format bc the HTML date input returns a string in this format, and we want to ensure that the date is valid and not just a random string
+  // HTML <input type="date"> returns dates in YYYY-MM-DD format, regardless of how the browser displays them.
   if (!/^\d{4}-\d{2}-\d{2}$/.test(dueDate)) {
     return false;
   }
