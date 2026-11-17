@@ -11,13 +11,13 @@
   There is a search box thatll make assignments that dont fit the query disapear, and a status box to let users know the status when pressing add assignment or remove.
 
 
+## Initializing the npm (Set up):
+ (Server)
+  open cmd or open folder with Some IDE.
+  go to server folder I.e [cd csc3050-module1\server]
+  **run npm install express** (default options if there are selectable options) **have to run for both files sepreately**
+  then run **npm run dev**
 
-##  known bugs, shortcuts, and unfinished pieces.
-  no known bugs
-  http://localhost:3000/api/assignments for assignments serverside
-  css and visual effects definately need some work but core functionallity is done. GL :3
-
-## Initializing the npm:
   (Client)
   open cmd or open folder with Some IDE.
   go to client folder I.e [cd csc3050-module1\client]
@@ -25,14 +25,7 @@
   then run **npm ls react-router-dom**
   then run ***npm run dev**
 
-  (Server)
-  open cmd or open folder with Some IDE.
-  go to server folder I.e [cd csc3050-module1\server]
-  **run npm install express** (default options if there are selectable options) **have to run for both files sepreately**
-  then run **npm run dev**
-
-
-  Yes you will have to do this **EVERY TIME** you pull the file...
+  Yes you will have to do this **EVERY TIME** you pull the file on a new device...
 
 ## vitest
   cd server
